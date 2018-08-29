@@ -1,0 +1,40 @@
+version: '3'
+services:
+    pipeline:
+        container_name: pipeline
+        build: docker_images/graph_networkx
+        working_dir: /home/user
+        volumes:
+            - .:/home/user
+        environment:
+            TZ: "Europe/Amsterdam"
+        command: python main.py -i 'example-data/revolver_bipartite.csv' -o 'test' -p 'config.yml' --export-graphml --cache
+    postprocessing:
+        container_name: postprocessing
+        build: docker_images/graph_networkx
+        working_dir: /home/user
+        volumes:
+            - .:/home/user
+        environment:
+            TZ: "Europe/Amsterdam"
+        command: python postprocessing.py -i 'revolver_bipartite'
+    analysis:
+        container_name: analysis
+        build: docker_images/graph_networkx
+        working_dir: /home/user
+        volumes:
+            - .:/home/user
+        environment:
+            TZ: "Europe/Amsterdam"
+        command: python analysis.py
+    notebook:
+        build: docker_images/graph_networkx
+        working_dir: /home/user
+        volumes:
+            - .:/home/user
+            - ./notebook.sh:/notebook.sh
+        ports:
+            - 8888:8888
+        environment:
+            TZ: "Europe/Amsterdam"
+        command: sh /notebook.sh

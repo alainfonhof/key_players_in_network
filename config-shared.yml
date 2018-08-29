@@ -1,0 +1,173 @@
+# Duplicate to config.yml for a personal config file.
+# For more information check the README.md
+relationship: 1
+
+projection:
+  id: 2
+  nodes: bottom
+
+filters:
+  - id: 1
+    two_mode: true
+    args:
+      n: 1
+      nodes: top
+  - id: 1
+    two_mode: true
+    args:
+      n: 2
+      nodes: top
+  - id: 1
+    two_mode: true
+    args:
+      n: 3
+      nodes: top
+  - id: 1
+    two_mode: true
+    args:
+      n: 4
+      nodes: top
+  - id: 1
+    two_mode: true
+    args:
+      n: 5
+      nodes: top
+  - id: 1
+    two_mode: true
+    args:
+      n: 6
+      nodes: top
+  - id: 1
+    two_mode: true
+    args:
+      n: 7
+      nodes: top
+  - id: 1
+    two_mode: true
+    args:
+      n: 8
+      nodes: top
+  - id: 1
+    two_mode: true
+    args:
+      n: 9
+      nodes: top
+  - id: 1
+    two_mode: true
+    args:
+      n: 10
+      nodes: top
+  - id: 1
+    two_mode: true
+    args:
+      n: 11
+      nodes: top
+  - id: 1
+    two_mode: true
+    args:
+      n: 12
+      nodes: top
+
+bipartite_metrics:
+  - id: nodes
+  - id: nodes
+    args:
+      nodes: top
+  - id: nodes
+    args:
+      nodes: bottom
+  - id: edges
+  - id: density
+  - id: density
+    args:
+      nodes: top
+  - id: density
+    args:
+      nodes: bottom
+  - id: average_degree
+  - id: average_degree
+    args:
+      nodes: top
+  - id: average_degree
+    args:
+      nodes: bottom
+  - id: average_clustering
+  - id: average_clustering
+    args:
+      nodes: top
+  - id: average_clustering
+    args:
+      nodes: bottom
+  - id: average_clustering
+    args:
+      nodes: bottom
+      mode: min
+  - id: average_clustering
+    args:
+      nodes: bottom
+      mode: max
+  - id: average_clustering
+    args:
+      nodes: top
+      mode: min
+  - id: average_clustering
+    args:
+      nodes: top
+      mode: max
+
+bipartite_node_metrics:
+  - id: clustering
+  - id: clustering
+    args:
+      mode: min
+  - id: clustering
+    args:
+      mode: max
+  - id: degree_centrality
+    args:
+      nodes: top
+  - id: degree_centrality
+    args:
+      nodes: bottom
+  # - id: closeness_centrality
+  #   args:
+  #     nodes: top
+  # - id: closeness_centrality
+  #   args:
+  #     nodes: bottom
+  # - id: betweenness_centrality
+  #   args:
+  #     nodes: top
+  # - id: betweenness_centrality
+  #   args:
+  #     nodes: bottom
+
+network_metrics:
+  - id: nodes
+  - id: edges
+  - id: average_degree
+  - id: density
+  - id: average_shortest_path_length
+  - id: degree_assortativity_coefficient
+  - id: average_clustering
+
+node_metrics:
+  - id: average_neighbor_degree
+  - id: clustering
+  - id: degree_centrality
+  - id: closeness_centrality
+  - id: betweenness_centrality
+  - id: pagerank
+  - id: community
+
+# edge_metrics:
+#   - id: dispersion
+#   - id: edge_betweenness_centrality
+#     args:
+#       weight: weight
+#   - id: current_flow_betweenness_centrality
+#     args:
+#       weight: weight
+
+
+
