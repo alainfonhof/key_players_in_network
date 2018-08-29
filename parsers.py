@@ -96,12 +96,7 @@ def parse_toolbox_public(input, profile=None):
 	return B
 
 
-def parse_toolbox_private(input):
-	return gt.load_graph_from_csv(input, ecols=(1, 3), eprop_names=['EventDate', 'Author.Name', 'Receiver.Name'], skip_first=True, csv_options={"delimiter": ";"})
-
-
 mapped_parsers = {
 	1: parse_bipartite,
-	2: parse_toolbox_public,
-	3: parse_toolbox_private
+	2: parse_toolbox_public
 }
